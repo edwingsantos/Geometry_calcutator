@@ -1,56 +1,46 @@
-#ES 1rst geomarty calculator
-
-#import the files 
-import create_shapes
-import view_shapes
-import select_shapes
-import compare_shapes
-import sort_shapes
-import formula_guide
-
-#print the greating
-print("GEOMETRY CALCULATOR\N WELCOME TO THE SHAPE CALCULATOR!") 
+#ES 1rst main 
+#call all of the functions from their repective files
+from create_shapes import create_shapes
+from view_shapes import view_shapes
+from delete_shapes import delete_shapes
+from compare_shapes import comparing
+from sort_shapes import sort_shapes
+from formula_guide import formula_guide
+from info import load_shapes
 
 #make a funtion for main 
-def main():
-    #print that this is the main funtion 
-    print("Main Function")
-    #make a while true loop 
+def main(): 
+    #print a welcome messege and print the shapes for the user to see
+    print("Welcome to the geometric calculator")
+    load_shapes()
+    #make a while true loop asking the user what they want to do 
     while True:
-        #print the amount of shpaes created 
-    
-    
-
-
-
-
-    
-        #Input the different actions the user can choose from called choice
-        choice = input("1: Create New Shape\n2: View All Shapes\n3: Select Shape\n4: Compare Shapes\n5: Sort Shapes\n:6 Formula Guide\n:7 Quit").strip()
-        #if choice equals 1 call the create shape funtion 
+        choice = input("\n1 Create\n2 View\n3 delete\n4 Compare\n5 Sort\n6 Formulas\n7 Quit\nChoice:")
+        #If choice is 1 call the create shapes 
         if choice == "1":
             create_shapes()
-        #elif choice equlas 2 call the view shapes funtion 
+        #If choice is 2 call the view shapes
         elif choice == "2":
             view_shapes()
-        #elif choice equals 3 call the select shapes funtion
+        #If choice is 3 call the select shapes
         elif choice == "3":
-            select_shapes()
-        #elif choice equals 4 call the compare funtion
+            #I didnt see a reason to select a shape and do nothing so I decided to delete shapes
+            delete_shapes()
+        #If choice is 4 call the compare shapes
         elif choice == "4":
-            compare_shapes()
-        #elif chioce equlas 5 call the sort funtion
+            comparing()
+        #If choice is 5 call the sort shapes
         elif choice == "5":
             sort_shapes()
-        #elif choice equals 6 call the formula guide funtion 
+        #If choice is 6 call the formula guide
         elif choice == "6":
             formula_guide()
-        #elif choice equals 7 break the loop 
+        #if choice is 7 break 
         elif choice == "7":
-            break 
-        #else print that the option is not there and continue
+            break
+        #else print invalid option select again
         else:
-            print("Option not avialable, please try agian.")
-            continue
+            print("Invalid option please select again")
 
-
+#call main
+    main()
