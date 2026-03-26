@@ -10,6 +10,8 @@ def view_shapes():
         print("No shapes")
         return
     #enumerate the shapes with a loop and print them 
-    for i, s in enumerate(shapes_created):
-        print(i, end=": ")
-        s.display()
+    for i in enumerate(shapes_created, 1):
+        print(f"{i}")
+#print the options enumerated
+for i, shapes_created in enumerate(shapes_created,1):
+    print(f"Shape: {shapes_created}")

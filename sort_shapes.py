@@ -1,7 +1,7 @@
 #Es sort shapes
 
 #call all funtions needed
-from info import shapes, save_shapes
+from info import shapes_created, save_shapes
 #make a funtion for sorting things
 def sort_shapes():
     #print the area and perimeter and make user choose with input
@@ -9,7 +9,7 @@ def sort_shapes():
     choice = input("Choose: ")
     #if choice is one the sort the shapes by area 
     if choice == "1":
-        shapes.sort(key=lambda s: s.area())
+        shapes_created.sort(key=lambda s: s.area())
     #if choice is two then sort the shapes by perimeter
     elif choice == "2":
-        shapes.sort(key=lambda s: s.perimeter())
+        shapes_created.sort(key=lambda s: s.perimeter())
